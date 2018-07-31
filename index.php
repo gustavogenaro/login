@@ -5,7 +5,11 @@ $app = new \Slim\Slim();
 
 $app->get('/', function(){
 
-	echo "o.k";
+	$sql = new Funcoes\DB\Sql();
+
+	$results = $sql->select("SELECT * FROM user");
+
+	echo json_encode($results);
 });
 
 $app->run();
