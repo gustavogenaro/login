@@ -9,5 +9,6 @@
 		    		<label for="senha">Senha <span class="required">*</span></label>
 		    		<input type="password" name="password">
 				</p>
-		    		<input type="submit" value="Login" name="login" class="button">         
+		    		<input type="submit" value="Login" name="login" class="button">    
+		    		<a href="/login/views/admin/">acesso admin</a>     
 		</form>           

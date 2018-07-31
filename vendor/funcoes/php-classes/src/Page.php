@@ -10,12 +10,12 @@ class Page {
 		"data"=>[] #guarda o valor de $defaults e $opts
 	];
 
-	public function __construct($opts = array()){
+	public function __construct($opts = array(), $tpl_dir = "/login/views/"){
 
 		$this->options = array_merge($this->defaults, $opts); #mescla as array
 
 		$config = array(
-		    "tpl_dir"	=> $_SERVER["DOCUMENT_ROOT"]."/login/views/", #preocura pasta com os template
+		    "tpl_dir"	=> $_SERVER["DOCUMENT_ROOT"].$tpl_dir, #preocura pasta com os template
 		    "cache_dir"	=> $_SERVER["DOCUMENT_ROOT"]."/login/views-cache/", #cache das paginas
 		    "debug"         => true
 		);
