@@ -1,15 +1,18 @@
 <?php
 require_once("vendor/autoload.php");
 
-$app = new \Slim\Slim();
+use \Slim\Slim;
+use \Funcoes\Page;
 
-$app->get('/', function(){
+$app = new Slim();
 
-	$sql = new Funcoes\DB\Sql();
+$app->config('debug', true);
 
-	$results = $sql->select("SELECT * FROM user");
+$app->get('/', function(){ #define a rota para chamada do arquivo
 
-	echo json_encode($results);
+	$page = new Page();
+
+	$page->setTpl("index");	
 });
 
 $app->run();
